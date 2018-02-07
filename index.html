@@ -5,13 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Skita</title>
-    <script src="track.js" defer></script>
-    <script src="point.js" defer></script>
-    <script src="segment.js" defer></script>
-    <script src="trackParser.js" defer></script>
-    <script src="index.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <script src="dist/bundle.js" defer></script>
 </head>
 <body>
-    <input type="file" id="input">
+    <h1 class="center-align">SKITA</h1>
+    <div id="app" class="container">
+        <div class="section">
+            <h4>Select file(s)</h4>
+            <div class="card-panel light-blue">
+                <input type="file" id="input" v-on:change="change">
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p class="white-text grey darken-4">By Josef Kuchař</p>
+    </footer>
 </body>
 </html>

@@ -1,4 +1,8 @@
-class TrackParser {
+import Track from './track';
+import Segment from './segment';
+import Point from './point';
+
+export default class TrackParser {
     parse(xml) {
         let track = new Track();
 

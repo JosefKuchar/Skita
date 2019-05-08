@@ -9,12 +9,12 @@
   "author": "Josef Kuchař",
   "license": "MIT",
   "devDependencies": {
-    "babel-core": "^6.26.0",
-    "babel-loader": "^7.1.2",
-    "babel-preset-env": "^1.6.1",
-    "webpack": "^3.10.0"
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.0.5",
+    "babel-preset-env": "^1.7.0",
+    "webpack": "^4.30.0"
   },
   "dependencies": {
-    "vue": "^2.5.13"
+    "vue": "^2.6.10"
   }
 }

@@ -1,4 +1,5 @@
 import Constants from './constants'
+import { degreesToRadians } from './utils';
 
 export default class Point {
     constructor(latitude, longitude, elevation, time) {
@@ -19,14 +20,10 @@ export default class Point {
 
         return Constants.EARTH_RADIUS * b;
     }
-    
+
     speedTo(point) {
         let distance = this.distanceTo(point);
         let time = Math.abs(this.time - point.time) / 1000;
         return distance / time;
     }
-}
-
-function degreesToRadians(degrees) {
-    return degrees * Math.PI / 180;
 }

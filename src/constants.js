@@ -1,4 +1,4 @@
-let Constants = {
+const Constants = {
     EARTH_RADIUS: 6371000
 };
 

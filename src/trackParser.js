@@ -13,7 +13,7 @@ export default class TrackParser {
             let pointsDOM = segmentsDOM[i].getElementsByTagName('trkpt');
             for (let j = 0; j < pointsDOM.length; j++) {
                 let elevation = Number(pointsDOM[j].getElementsByTagName('ele')[0].innerHTML);
-                let time = this.parseTime(pointsDOM[j].getElementsByTagName('time')[0].innerHTML);
+                let time = new Date(pointsDOM[j].getElementsByTagName('time')[0].innerHTML);
                 let latitude = Number(pointsDOM[j].getAttribute('lat'));
                 let longitude = Number(pointsDOM[j].getAttribute('lon'));
                 segment.addPoint(new Point(latitude, longitude, elevation, time));
@@ -22,9 +22,5 @@ export default class TrackParser {
         }
 
         return track;
-    } 
-
-    parseTime(string) {
-        return new Date(Date.parse(string));
     }
 }

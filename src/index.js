@@ -13,11 +13,14 @@ let app = new Vue({
 
             reader.onload = ((e) => {
                 let xml = domParser.parseFromString(e.target.result, 'text/xml');
-                let track = trackParser.parse(xml);
-
-                console.log(track.segments[0].getDistance());
-                console.log(track.segments[0].getAverageSpeed());
-                console.log(track.segments[0].getTime() / 1000 / 60 / 60);
+                if (xml.getElementsByTagName("parsererror").length > 0) {
+                    throw new Error('Error parsing XML');
+                } else {
+                    let track = trackParser.parse(xml);
+                    console.log(track.segments[0].getDistance());
+                    console.log(track.segments[0].getAverageSpeed());
+                    console.log(track.segments[0].getTime() / 1000 / 60 / 60);
+                }
             });
 
             reader.readAsText(e.target.files[0]);

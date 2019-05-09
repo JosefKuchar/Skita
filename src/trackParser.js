@@ -3,9 +3,9 @@ import Segment from './segment';
 import Point from './point';
 
 export default class TrackParser {
-    parse(xml) {
-        let track = new Track();
-
+    parse(xml, filename) {
+        let meta = xml.getElementsByTagName('metadata')[0];
+        let track = new Track(filename, meta.getElementsByTagName('name')[0].childNodes[0].data);
         let trackDOM = xml.getElementsByTagName('trk')[0];
         let segmentsDOM = trackDOM.getElementsByTagName('trkseg');
         for (let i = 0; i < segmentsDOM.length; i++) {
